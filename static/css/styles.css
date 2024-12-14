@@ -1,0 +1,264 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* 浅灰色背景 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;  /* 允许横向滚动 */
+    overflow-y: auto; /* 禁止纵向滚动条 */
+}
+
+/* 页面容器样式 */
+.container {
+    display: flex;
+    flex-wrap: nowrap; /* 确保所有区块横向排列 */
+    overflow-x: scroll; /* 横向滚动条 */
+	overflow-y: scroll; /* 纵向滚动条 */
+    width: 100%;
+    padding: 2px;
+    gap: 15px; /* 区块之间的横向间距减少 */
+    margin-top: 2px;
+    justify-content: flex-start;
+}
+
+/* 每个区的样式 */
+.section {
+    width: 500px;
+    background-color: #ffffff; /* 白色背景 */
+    padding: 2px;  /* 缩小内边距 */
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* 减少区块间的空隙 */
+    min-width: 500px; /* 固定宽度 */
+}
+
+.section-b{
+	background-color: #d7d9db; /* 灰色背景 */
+}
+
+.section-c{
+	background-color: #c2cff2; /* 白色背景 */
+}
+
+.section-d{
+	background-color: lightblue; /* 白色背景 */
+}
+
+.section-e{
+	background-color: lightblue; /* 白色背景 */
+}
+
+.section-f{
+	background-color: lightblue; /* 白色背景 */
+}
+
+.section-g{
+	background-color: lightblue; /* 白色背景 */
+}
+
+/* 标题样式 */
+h4 {
+    text-align: center;
+    color: #343a40; /* 深灰色 */
+    font-size: 17px;  /* 小号标题字体 */
+    margin-bottom: 2px;  /* 减少标题与输入框的间距 */
+}
+
+/* 表单元素间的间距 */
+.form-group {
+    margin-bottom: 5px;  /* 减少表单元素之间的间距 */
+}
+
+
+/* 输入框（文本框、选择框）样式 */
+textarea, input[type="file"] {
+    width: 95%;
+    padding: 8px; /* 减小内边距 */
+    margin: 5px 0;
+    border: 1px solid #ddd; /* 浅灰色边框 */
+    border-radius: 8px;
+    font-size: 13px; /* 调整字体大小 */
+    color: #495057; /* 深灰色文本 */
+    background-color: #f9f9f9; /* 浅灰背景 */
+}
+
+select {
+    width: 90%;
+    padding: 2px; /* 减小内边距 */
+    margin: 2px 0;
+    border: 1px solid #ddd; /* 浅灰色边框 */
+    border-radius: 8px;
+    font-size: 10px; /* 调整字体大小 */
+    color: #495057; /* 深灰色文本 */
+    background-color: #f9f9f9; /* 浅灰背景 */
+}
+
+/* 增加文本框的可伸缩性 */
+textarea {
+    resize: vertical;
+}
+
+/* 按钮样式 */
+button {
+    background: linear-gradient(145deg, #555555, #333333); /* 渐变蓝色 */
+    color: white;
+    border: none;
+    border-radius: 15px; /* 圆角按钮 */
+    padding: 6px 10px;  /* 调整按钮的大小 */
+    cursor: pointer;
+    transition: all 0.3s ease;  /* 平滑过渡效果 */
+    font-size: 12px;  /* 调整字体大小 */
+    width: 100px;  /* 按钮宽度为父容器的100% */
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* 增加阴影 */
+}
+
+/* 按钮悬停效果 */
+button:hover {
+    background: linear-gradient(145deg, #333333, #555555); /* 悬停时渐变反转 */
+    transform: scale(1.05); /* 放大按钮 */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15); /* 增强阴影效果 */
+}
+
+/* 按钮禁用状态 */
+button:disabled {
+    background-color: #888888; /* 灰色背景 */
+    cursor: not-allowed;
+    box-shadow: none; /* 禁用状态去掉阴影 */
+}
+
+/* 按钮的其他状态（如点击） */
+button:active {
+    background: #222222; /* 深蓝色背景 */
+    transform: scale(0.98); /* 点击时按钮稍微缩小 */
+}
+
+
+/* 回答框横向排列 */
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;  /* 减少间距 */
+}
+
+/* 回答框对齐 */
+.row select, .row button {
+    flex: 1;
+}
+
+/* 提问方式选择框和生成按钮的横向排列 */
+.row2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;  /* 减少间距 */
+	
+	padding-left:60px;
+	padding-right:60px;
+	padding-top:0px;
+	
+    align-items: center;
+}
+
+/* 选择框和按钮对齐 */
+.row2 select {
+    flex: 2;
+	height:85%;
+}
+.row2 button {
+    flex: 1;
+	height:85%;
+}
+
+
+/* 按钮的横向排列 */
+.rowEq {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;  /* 减少间距 */
+	padding-left:140px;
+	padding-right:140px;
+}
+
+/* 按钮对齐 */
+.rowEq select, .rowEq button {
+    flex: 1;
+}
+
+
+/* 合并输出框样式 */
+textarea#c_merged_output, textarea#d_merged_output, textarea#e_merged_output, textarea#f_merged_output {
+    background-color: #ffffff; /* 白色背景 */
+    border-color: #ddd; /* 浅灰色边框 */
+    color: #495057; /* 深灰色文本 */
+}
+
+/* 文件上传按钮样式 */
+input[type="file"] {
+    background-color: #f9f9f9; /* 浅灰背景 */
+    border: 1px solid #ddd; /* 浅灰色边框 */
+    padding: 8px;  /* 调整文件上传按钮的内边距 */
+    margin: 5px 0;
+}
+
+/* 横向滚动条样式 */
+.container::-webkit-scrollbar {
+    height: 16px; /* 设置滚动条的高度 */
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section {
+        width: 500px;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        width: 100%;
+    }
+
+    button {
+        width: auto;
+        margin: 5px;
+    }
+}
+
+.tapromt{
+	height:8em;
+}
+
+.taanswer{
+	height:16em;
+}
+
+.tamerge{
+	height:8em;
+}
+
+#b_job_name{
+	border:none;
+	border-bottom:1px solid #000;
+}
+

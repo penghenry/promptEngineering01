@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面B</title>
+	<link rel="stylesheet" href="../static/css/styles.css">
+	
+</head>
+<body>
+    <div class="container">
+        <!-- 区B -->
+        <div class="section section-b" >
+            <h4>初始信息</h4>
+            <!-- 行业现状编辑框 -->
+            <div class="form-group">
+                <label for="b_industry_status">行业现状描述:</label>
+                <textarea id="b_industry_status" rows="4"></textarea>
+            </div>
+            <!-- 公司现状编辑框 -->
+            <div class="form-group">
+                <label for="b_company_status">公司现状描述:</label>
+                <textarea id="b_company_status" rows="4"></textarea>
+            </div>
+            <!-- 项目现状编辑框 -->
+            <div class="form-group">
+                <label for="b_project_status">项目现状描述:</label>
+                <textarea id="b_project_status" rows="4"></textarea>
+            </div>
+            <!-- 岗位职责描述编辑框 -->
+            <div class="form-group">
+                <label for="b_job_duties">岗位名称:</label><input type="text" id="b_job_name" /><label for="b_job_duties2">  职责描述如下:</label>
+                <textarea id="b_job_duties" rows="4"></textarea>
+            </div>
+            <!-- 其他描述编辑框 -->
+            <div class="form-group">
+                <label for="b_other_info">其他描述:</label>
+                <textarea id="b_other_info" rows="4"></textarea>
+            </div>
+            <!-- 文件上传按钮 -->
+            <div class="form-group">
+				<label for="b_file_related">相关文件上传(txt,pdf,doc/docx,xls/xlsx,csv):</label>
+                <input type="file" id="b_file_upload" name="file" accept=".xlsx,.xls,.doc, .docx,.txt,.pdf,.csv"/>
+            </div>
+			<div class="rowEq">
+                <button id="b_next_btn">下一步</button>
+                <button id="b_clear_btn">清空</button>
+            </div>
+			
+        </div>
+
+        <!-- 区C - 提示词描述 -->
+        <div class="section section-c">
+            <h4>信息收集框架</h4>
+            <!-- 提示词描述 -->
+            <div class="form-group">
+                <label for="c_prompt">提示词描述:</label>
+                <textarea class="tapromt" id="c_prompt" rows="4"></textarea>
+            </div>
+			
+            <!-- 提问方式选择框和生成按钮 -->
+            <div class="row2">
+                <select id="c_question_type">
+                    <option value="chatgpt and doubao">同时提问</option>
+                    <option value="chatgpt">仅向ChatGPT提问</option>
+                    <option value="doubao">仅向豆包提问</option>
+                </select>
+                <button id='c_generate_btn'>生成</button>
+            </div>
+            <!-- ChatGPT回答框和豆包大模型回答框 -->
+            <div class="row">
+				<div>
+				<label for="c_prompt">chatgpt回答:</label>
+                <textarea class="taanswer" id="c_chatgpt_response" rows="7"></textarea>
+				</div>
+				<div>
+				<label for="c_prompt">豆包大模型回答:</label>
+                <textarea class="taanswer" id="c_doubao_response" rows="7"></textarea>
+				</div>
+                
+            </div>
+            <!-- 智能合并按钮和人工修改按钮 -->
+            <div class="rowEq">
+                <button id='c_merge_btn'>智能合并</button>
+                <button id='c_labor_btn'>人工修改</button>
+            </div>
+            <!-- 合并输出框 -->
+            <div class="form-group">
+                <label for="c_merged_output">合并输出:</label>
+                <textarea class="tamerge" id="c_merged_output" rows="6"></textarea>
+            </div>
+            <!-- 下一步按钮 -->
+            <div class="form-group" align="center">
+                <button id="c_next_btn">下一步</button>
+            </div>
+        </div>
+
+        <!-- 区D - 与区C结构相同 -->
+        <div class="section section-d">
+            <h4>检查清单</h4>
+            <div class="form-group">
+                <label for="d_prompt">提示词描述:</label>
+                <textarea class="tapromt" id="d_prompt" rows="4"></textarea>
+            </div>
+            <div class="row2">
+                <select id="d_question_type">
+                    <option value="both">同时提问</option>
+                    <option value="chatgpt">仅向ChatGPT提问</option>
+                    <option value="doubao">仅向豆包提问</option>
+                </select>
+                <button id='d_generate_btn'>生成</button>
+            </div>
+            <div class="row">
+                <div>
+				<label for="d_prompt">chatgpt回答:</label>
+                <textarea class="taanswer" id="d_chatgpt_response" rows="7"></textarea>
+				</div>
+				<div>
+				<label for="d_prompt">豆包大模型回答:</label>
+                <textarea class="taanswer" id="d_doubao_response" rows="7"></textarea>
+				</div>
+            </div>
+            <div class="rowEq">
+                <button id='d_merge_btn'>智能合并</button>
+                <button id='d_labor_btn'>人工修改</button>
+            </div>
+            <div class="form-group">
+                <label for="d_merged_output">合并输出:</label>
+                <textarea class="tamerge" id="d_merged_output" rows="4"></textarea>
+            </div>
+            <div class="form-group" align="center">
+                <button id="d_next_btn">下一步</button>
+            </div>
+        </div>
+
+        <!-- 区E - 与区C结构相同 -->
+        <div class="section section-e">
+            <h4>决策标准</h4>
+            <div class="form-group">
+                <label for="e_prompt">提示词描述:</label>
+                <textarea class="tapromt" id="e_prompt" rows="4"></textarea>
+            </div>
+            <div class="row2">
+                <select id="e_question_type">
+                    <option value="both">同时提问</option>
+                    <option value="chatgpt">仅向ChatGPT提问</option>
+                    <option value="doubao">仅向豆包提问</option>
+                </select>
+                <button id='e_generate_btn'>生成</button>
+            </div>
+            <div class="row">
+                <div>
+				<label for="e_prompt">chatgpt回答:</label>
+                <textarea class="taanswer" id="e_chatgpt_response" rows="7"></textarea>
+				</div>
+				<div>
+				<label for="e_prompt">豆包大模型回答:</label>
+                <textarea class="taanswer" id="e_doubao_response" rows="7"></textarea>
+				</div>
+            </div>
+            <div class="rowEq">
+                <button id='e_merge_btn'>智能合并</button>
+                <button id='e_labor_btn'>人工修改</button>
+            </div>
+            <div class="form-group">
+                <label for="e_merged_output">合并输出:</label>
+                <textarea class="tamerge" id="e_merged_output" rows="4"></textarea>
+            </div>
+            <div class="form-group" align="center">
+                <button id="e_next_btn">下一步</button>
+            </div>
+        </div>
+
+        <!-- 区F - 与区C结构相同 -->
+        <div class="section section-f">
+            <h4>情景对话</h4>
+            <div class="form-group">
+                <label for="f_prompt">提示词描述:</label>
+                <textarea class="tapromt" id="f_prompt" rows="4"></textarea>
+            </div>
+            <div class="row2">
+                <select id="f_question_type">
+                    <option value="both">同时提问</option>
+                    <option value="chatgpt">仅向ChatGPT提问</option>
+                    <option value="doubao">仅向豆包提问</option>
+                </select>
+                <button id='f_generate_btn'>生成</button>
+            </div>
+            <div class="row">
+                <div>
+				<label for="f_prompt">chatgpt回答:</label>
+                <textarea class="taanswer" id="f_chatgpt_response" rows="7"></textarea>
+				</div>
+				<div>
+				<label for="f_prompt">豆包大模型回答:</label>
+                <textarea class="taanswer" id="f_doubao_response" rows="7"></textarea>
+				</div>
+            </div>
+            <div class="rowEq">
+                <button id='f_merge_btn'>智能合并</button>
+                <button id='f_labor_btn'>人工修改</button>
+            </div>
+            <div class="form-group">
+                <label for="f_merged_output">合并输出:</label>
+                <textarea class="tamerge" id="f_merged_output" rows="4"></textarea>
+            </div>
+            <div class="form-group" align="center">
+                <button id="f_next_btn">下一步</button>
+            </div>
+        </div>
+
+        <!-- 区G - 输出整合 -->
+        <div class="section section-g">
+            <h4>汇总</h4>
+            <!-- 信息收集框架 -->
+            <div class="form-group">
+                <label for="g_info_collection">信息收集框架:</label>
+                <textarea class="tamerge" id="g_info_collection" rows="4"></textarea>
+            </div>
+            <!-- 检查清单 -->
+            <div class="form-group">
+                <label for="g_checklist">检查清单:</label>
+                <textarea class="tamerge" id="g_checklist" rows="4"></textarea>
+            </div>
+            <!-- 决策标准 -->
+            <div class="form-group">
+                <label for="g_decision_criteria">决策标准:</label>
+                <textarea class="tamerge" id="g_decision_criteria" rows="4"></textarea>
+            </div>
+            <!-- 情景对话框 -->
+            <div class="form-group">
+                <label for="g_scenario_dialogue">情景对话:</label>
+                <textarea class="tamerge" id="g_scenario_dialogue" rows="4"></textarea>
+            </div>
+            <!-- 生成结果按钮 -->
+            <div class="form-group" align="center">
+                <button id='g_generate_btn'>生成结果</button>
+            </div>
+        </div>
+    </div>
+	
+	<script type="text/javascript" src="../static/js/baseCommon.js"></script>
+</body>
+</html>
+
