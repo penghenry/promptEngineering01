@@ -2,19 +2,15 @@ import os
 import openai
 import requests
 import json
-from flask import Flask, render_template, request, redirect, url_for, session,jsonify
+from flask import Flask, render_template, request, redirect, url_for, session,jsonify,g
 from pathlib import Path
 import mylib as mylib
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-# OpenAI API Key
-# openai.api_key = "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"
 
-# Dify API endpoint and credentials (replace with actual API credentials)
-DIFY_API_URL = "your_dify_api_url"
-DIFY_API_KEY = "your_dify_api_key"
+
 
 # File upload settings
 UPLOAD_FOLDER = os.path.join(Path(__file__).resolve().parent,'uploads')
@@ -146,6 +142,50 @@ def generate_response_chatgpt():
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)})
 
+        
+        
+@app.route('/mergeFromChatgpt', methods=['POST'])
+def merge_response_chatgpt():
+    print('mergeFromChatgpt')
+    data = request.get_json()
+    prompt = data.get('prompt')
+    api_key = "app-fBDvSQvqAqsKDXQWWMp1S5rY"
+    
+    if not prompt:
+        return jsonify({'success': False, 'error': '提示词描述不能为空！'})
+    
+    headers = {
+        'Authorization': f'Bearer {api_key}',
+        'Content-Type': 'application/json',
+    }
+    #print(prompt)
+    
+    '''
+    uploadFileConten = ""
+    if 'uploadFileConten' in g:
+        uploadFileConten = g.uploadFileConten
+    '''
+    
+    data = {
+        "inputs": {
+            "query": prompt
+        },
+        "response_mode": "blocking",
+        "user": "abc-123"
+    }
+    
+    try:
+        response = requests.post(difyUrl, headers=headers, data=json.dumps(data))
+        #print(response.text)
+        answer = response.json()['answer']
+        #print(answer)
+        #print("66666666666666666666666666666666666666666666666666");
+        return jsonify({'success': True, 'answer': answer})
+
+    except Exception as e:
+        return jsonify({'success': False, 'error': str(e)})
+
+
 
 @app.route('/generateFromDoubao', methods=['POST'])
 def generate_response_doubao():
@@ -210,8 +250,8 @@ def uploadFile():
             file_content = mylib.extract_pdf_content(filename)
         elif filename.endswith('.docx'):
             file_content = mylib.extract_docx_content(filename)
-        elif filename.endswith('.doc'):
-            file_content = mylib.extract_doc_content(filename)
+        #elif filename.endswith('.doc'):
+        #    file_content = mylib.extract_doc_content(filename)
         elif filename.endswith('.xls') or filename.endswith('.xlsx'):
             file_content = mylib.extract_excel_content(filename)
         elif filename.endswith('.csv'):

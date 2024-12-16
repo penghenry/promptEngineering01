@@ -3,7 +3,7 @@
 import re
 import PyPDF2
 import docx
-import win32com.client
+#import win32com.client
 import pandas as pd
 
 #pdf
@@ -40,13 +40,14 @@ print(docx_content)
 
 
 #doc
+'''
 def extract_doc_content(file_path):
     word = win32com.client.Dispatch("Word.Application")
     doc = word.Documents.Open(file_path)
     text = doc.Content.Text
     doc.Close()
     return text
-
+'''
 # 示例
 '''
 file_path = 'example.doc'

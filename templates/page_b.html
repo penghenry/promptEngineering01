@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>页面B</title>
+    <title>知识萃取工作坊</title>
 	<link rel="stylesheet" href="../static/css/styles.css">
 	
 </head>
@@ -29,7 +29,7 @@
             </div>
             <!-- 岗位职责描述编辑框 -->
             <div class="form-group">
-                <label for="b_job_duties">岗位名称:</label><input type="text" id="b_job_name" /><label for="b_job_duties2">  职责描述如下:</label>
+                <label for="b_job_name">岗位名称:</label><input type="text" id="b_job_name" /><label for="b_job_duties">  职责描述如下:</label>
                 <textarea id="b_job_duties" rows="4"></textarea>
             </div>
             <!-- 其他描述编辑框 -->
@@ -39,8 +39,8 @@
             </div>
             <!-- 文件上传按钮 -->
             <div class="form-group">
-				<label for="b_file_related">相关文件上传(txt,pdf,doc/docx,xls/xlsx,csv):</label>
-                <input type="file" id="b_file_upload" name="file" accept=".xlsx,.xls,.doc, .docx,.txt,.pdf,.csv"/>
+				<label for="b_file_upload">相关文件上传(txt,pdf,docx,xls/xlsx,csv):</label>
+                <input type="file" id="b_file_upload" name="file" accept=".xlsx,.xls,.docx,.txt,.pdf,.csv"/>
             </div>
 			<div class="rowEq">
                 <button id="b_next_btn">下一步</button>
@@ -54,7 +54,7 @@
             <h4>信息收集框架</h4>
             <!-- 提示词描述 -->
             <div class="form-group">
-                <label for="c_prompt">提示词描述:</label>
+                <label for="c_prompt">提示词描述(请仔细核查并按需调整):</label>
                 <textarea class="tapromt" id="c_prompt" rows="4"></textarea>
             </div>
 			
@@ -70,11 +70,11 @@
             <!-- ChatGPT回答框和豆包大模型回答框 -->
             <div class="row">
 				<div>
-				<label for="c_prompt">chatgpt回答:</label>
+				<label for="c_chatgpt_response">chatgpt回答:</label>
                 <textarea class="taanswer" id="c_chatgpt_response" rows="7"></textarea>
 				</div>
 				<div>
-				<label for="c_prompt">豆包大模型回答:</label>
+				<label for="c_doubao_response">豆包大模型回答:</label>
                 <textarea class="taanswer" id="c_doubao_response" rows="7"></textarea>
 				</div>
                 
@@ -99,12 +99,12 @@
         <div class="section section-d">
             <h4>检查清单</h4>
             <div class="form-group">
-                <label for="d_prompt">提示词描述:</label>
+                <label for="d_prompt">提示词描述(请仔细核查并按需调整):</label>
                 <textarea class="tapromt" id="d_prompt" rows="4"></textarea>
             </div>
             <div class="row2">
                 <select id="d_question_type">
-                    <option value="both">同时提问</option>
+                    <option value="chatgpt and doubao">同时提问</option>
                     <option value="chatgpt">仅向ChatGPT提问</option>
                     <option value="doubao">仅向豆包提问</option>
                 </select>
@@ -112,11 +112,11 @@
             </div>
             <div class="row">
                 <div>
-				<label for="d_prompt">chatgpt回答:</label>
+				<label for="d_chatgpt_response">chatgpt回答:</label>
                 <textarea class="taanswer" id="d_chatgpt_response" rows="7"></textarea>
 				</div>
 				<div>
-				<label for="d_prompt">豆包大模型回答:</label>
+				<label for="d_doubao_response">豆包大模型回答:</label>
                 <textarea class="taanswer" id="d_doubao_response" rows="7"></textarea>
 				</div>
             </div>
@@ -137,12 +137,12 @@
         <div class="section section-e">
             <h4>决策标准</h4>
             <div class="form-group">
-                <label for="e_prompt">提示词描述:</label>
+                <label for="e_prompt">提示词描述(请仔细核查并按需调整):</label>
                 <textarea class="tapromt" id="e_prompt" rows="4"></textarea>
             </div>
             <div class="row2">
                 <select id="e_question_type">
-                    <option value="both">同时提问</option>
+                    <option value="chatgpt and doubao">同时提问</option>
                     <option value="chatgpt">仅向ChatGPT提问</option>
                     <option value="doubao">仅向豆包提问</option>
                 </select>
@@ -150,11 +150,11 @@
             </div>
             <div class="row">
                 <div>
-				<label for="e_prompt">chatgpt回答:</label>
+				<label for="e_chatgpt_response">chatgpt回答:</label>
                 <textarea class="taanswer" id="e_chatgpt_response" rows="7"></textarea>
 				</div>
 				<div>
-				<label for="e_prompt">豆包大模型回答:</label>
+				<label for="e_doubao_response">豆包大模型回答:</label>
                 <textarea class="taanswer" id="e_doubao_response" rows="7"></textarea>
 				</div>
             </div>
@@ -173,14 +173,14 @@
 
         <!-- 区F - 与区C结构相同 -->
         <div class="section section-f">
-            <h4>情景对话</h4>
+            <h4>情景对策</h4>
             <div class="form-group">
-                <label for="f_prompt">提示词描述:</label>
+                <label for="f_prompt">提示词描述(请仔细核查并按需调整):</label>
                 <textarea class="tapromt" id="f_prompt" rows="4"></textarea>
             </div>
             <div class="row2">
                 <select id="f_question_type">
-                    <option value="both">同时提问</option>
+                    <option value="chatgpt and doubao">同时提问</option>
                     <option value="chatgpt">仅向ChatGPT提问</option>
                     <option value="doubao">仅向豆包提问</option>
                 </select>
@@ -188,11 +188,11 @@
             </div>
             <div class="row">
                 <div>
-				<label for="f_prompt">chatgpt回答:</label>
+				<label for="f_chatgpt_response">chatgpt回答:</label>
                 <textarea class="taanswer" id="f_chatgpt_response" rows="7"></textarea>
 				</div>
 				<div>
-				<label for="f_prompt">豆包大模型回答:</label>
+				<label for="f_doubao_response">豆包大模型回答:</label>
                 <textarea class="taanswer" id="f_doubao_response" rows="7"></textarea>
 				</div>
             </div>
@@ -227,9 +227,9 @@
                 <label for="g_decision_criteria">决策标准:</label>
                 <textarea class="tamerge" id="g_decision_criteria" rows="4"></textarea>
             </div>
-            <!-- 情景对话框 -->
+            <!-- 情景对策 -->
             <div class="form-group">
-                <label for="g_scenario_dialogue">情景对话:</label>
+                <label for="g_scenario_dialogue">情景对策:</label>
                 <textarea class="tamerge" id="g_scenario_dialogue" rows="4"></textarea>
             </div>
             <!-- 生成结果按钮 -->

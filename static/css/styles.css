@@ -39,15 +39,15 @@ body {
 }
 
 .section-c{
-	background-color: #c2cff2; /* 白色背景 */
+	background-color: #c2cff2; /* 蓝色背景 */
 }
 
 .section-d{
-	background-color: lightblue; /* 白色背景 */
+	background-color: lightblue; /* 淡蓝背景 */
 }
 
 .section-e{
-	background-color: lightblue; /* 白色背景 */
+	background-color: #c2cff2; /* 白色背景 */
 }
 
 .section-f{
@@ -55,7 +55,7 @@ body {
 }
 
 .section-g{
-	background-color: lightblue; /* 白色背景 */
+	background-color: #d7d9db; /* 白色背景 */
 }
 
 /* 标题样式 */
